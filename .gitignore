@@ -1,0 +1,22 @@
+cypress.env.json
+.idea
+.env
+
+# dependencies
+node_modules
+
+# sst
+.sst
+
+# tmp files
+.#*
+
+# env 
+.env*.local
+.env
+
+# opennext
+.open-next
+
+# misc
+.DS_Store
