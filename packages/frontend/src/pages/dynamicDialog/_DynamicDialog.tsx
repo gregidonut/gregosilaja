@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import type { DialogParts, DialogSet } from "@/utils";
+import SpeechBubble from "./speechBubble/_SpeechBubble";
+
+import styles from "./_dynamicDialog.module.css";
 
 type Props = {
     dSet: DialogSet;
@@ -22,7 +25,7 @@ export default function DynamicDialog({ dSet }: Props): React.JSX.Element {
             return function () {
                 clearTimeout(secondTimer);
             };
-        }, 3000);
+        }, 1000);
 
         return function () {
             clearTimeout(firstTimer);
@@ -63,7 +66,7 @@ export default function DynamicDialog({ dSet }: Props): React.JSX.Element {
     );
 
     if (isLoading) {
-        <div>
+        <div className={styles.dynamicDialog}>
             <img
                 src={dSet[2].src}
                 alt={dSet[2].alt}
@@ -71,16 +74,16 @@ export default function DynamicDialog({ dSet }: Props): React.JSX.Element {
                 loading="lazy"
                 decoding="async"
             />
-            <p>{dSet[2].dialog}</p>
+            <SpeechBubble dialog={dSet[2].dialog} />
         </div>;
     }
 
     if (data) {
-        dSet[0].dialog = data[0]!.q;
+        dSet[0].dialog = `"${data[0]!.q}"\n -${data[0]!.a}`;
     }
 
     return (
-        <div>
+        <div className={styles.dynamicDialog}>
             <img
                 src={curDSet.src}
                 alt={curDSet.alt}
@@ -88,7 +91,9 @@ export default function DynamicDialog({ dSet }: Props): React.JSX.Element {
                 loading="lazy"
                 decoding="async"
             />
-            {curDSet.dialog !== "" ? <p>{curDSet.dialog}</p> : null}
+            {curDSet.dialog !== "" ? (
+                <SpeechBubble dialog={curDSet.dialog} />
+            ) : null}
         </div>
     );
 }

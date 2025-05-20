@@ -1,0 +1,50 @@
+.speechBubbleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+}
+
+/* https://codepen.io/JoeHastings/pen/gPrPMo */
+p.bubble {
+    position: absolute;
+    top: -22rem;
+    left: -29rem;
+
+    width: 30rem;
+    text-align: center;
+    line-height: 1.4em;
+    margin: 0.5rem auto;
+    background-color: #282a36;
+    border: 0.4rem solid #44475a;
+    border-radius: 3rem;
+    font-family: sans-serif;
+    padding: 0.5rem;
+    font-size: large;
+
+    white-space: pre-line;
+}
+
+p.bubble:before,
+p.bubble:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+p.speech:before {
+    left: 3rem;
+    bottom: -3.5rem;
+    border: 1.75rem solid;
+    border-color: #44475a transparent transparent #44475a;
+}
+
+p.speech:after {
+    left: 3.8rem;
+    bottom: -1.4rem;
+    border: 0.75rem solid;
+    border-color: #44475a transparent transparent #44475a;
+}
