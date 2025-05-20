@@ -1,7 +1,15 @@
 ---
 import styles from "./header.module.css";
+import navBurger from "@/assets/nav-burger.svg?url";
 ---
 
 <header class={styles.header}>
-    <a href="/">pakyu</a>
+    <nav>
+        <ul>
+            <li class={styles.navBurger}>
+                <img src={navBurger} alt="nav-burger" />
+            </li>
+        </ul>
+    </nav>
+    <a href="/"><img src="/favicon.svg" alt="logo" /></a>
 </header>

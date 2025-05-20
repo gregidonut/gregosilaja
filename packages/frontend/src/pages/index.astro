@@ -1,10 +1,73 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/Header.astro";
 import Main from "@/components/main/Main.astro";
+
+import ghPic from "@/assets/my_pic.png";
+import frontend from "@/assets/frontend.svg";
+import backend from "@/assets/backend.svg";
+import devops from "@/assets/devops.svg";
+import styles from "./_main.module.css";
+
+const rawFigures = [
+    {
+        img: frontend,
+        cap: "Frontend Polish",
+    },
+    {
+        img: backend,
+        cap: "Backend Power",
+    },
+    {
+        img: devops,
+        cap: "DevOps Precision",
+    },
+];
+
+const polFigs = rawFigures.map(function (item) {
+    const stArr = item.img.src.split("/");
+    const rawAlt = stArr[stArr.length - 1]!.split(".");
+    return {
+        img: item.img,
+        alt: rawAlt[0],
+        cap: item.cap,
+    };
+});
+console.log(JSON.stringify(backend, null, 4));
 ---
 
-<Layout>
+<Layout
+    description="A personal blog and portfolio showcasing my projects, technical insights, and journey in software development."
+>
     <Header />
-    <Main />
+    <Main>
+        <section class={styles.topSection}>
+            <Image height={250} src={ghPic} alt="github-picture" />
+            <article>
+                <h1>Greg Osilaja</h1>
+                <section class={styles.descSec}>
+                    {
+                        polFigs.map(function (item) {
+                            return (
+                                <figure>
+                                    <Image
+                                        height={140}
+                                        src={item.img}
+                                        alt={item.alt}
+                                    />
+                                    <figcaption>
+                                        <p>
+                                            <strong>{item.cap}</strong>
+                                        </p>
+                                    </figcaption>
+                                </figure>
+                            );
+                        })
+                    }
+                </section>
+            </article>
+        </section>
+    </Main>
 </Layout>

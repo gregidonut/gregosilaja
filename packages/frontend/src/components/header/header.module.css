@@ -3,7 +3,32 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    gap: 1;
 
     background: #44475a;
     width: 100%;
+
+    padding: 1rem 0.5rem;
+    position: relative;
+}
+
+.header .navBurger {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+.header > nav > ul {
+    list-style: none;
+}
+
+.header > nav > ul > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.header img {
+    height: 3.5rem;
 }
