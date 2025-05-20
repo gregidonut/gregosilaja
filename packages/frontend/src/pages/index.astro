@@ -5,11 +5,41 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/Header.astro";
 import Main from "@/components/main/Main.astro";
 
+import type { DialogSet } from "@/utils";
+import DynamicDialog from "./dynamicDialog/_DynamicDialogWrapper.tsx";
+
 import ghPic from "@/assets/my_pic.png";
+import ghPicSleezy from "@/assets/my_pic_sleezy.png";
+import ghPicStartled from "@/assets/my_pic_startled.png";
+import ghPicThinking from "@/assets/my_pic_thinking.png";
+
 import frontend from "@/assets/frontend.svg";
 import backend from "@/assets/backend.svg";
 import devops from "@/assets/devops.svg";
 import styles from "./_main.module.css";
+
+const myPics: DialogSet = [
+    {
+        src: ghPic.src,
+        alt: "gh pic base",
+        dialog: "",
+    },
+    {
+        src: ghPicStartled.src,
+        alt: "gh pic startled",
+        dialog: "yikes! someone's here! i gotta think of something cool to say",
+    },
+    {
+        src: ghPicThinking.src,
+        alt: "gh pic thinking",
+        dialog: "hmmm....",
+    },
+    {
+        src: ghPicSleezy.src,
+        alt: "gh pic sleezy",
+        dialog: "got it!",
+    },
+];
 
 const rawFigures = [
     {
@@ -43,7 +73,7 @@ const polFigs = rawFigures.map(function (item) {
     <Header />
     <Main>
         <section class={styles.topSection}>
-            <Image height={250} src={ghPic} alt="github-picture" />
+            <DynamicDialog dSet={myPics} client:idle />
             <article>
                 <h1>Greg Osilaja</h1>
                 <section class={styles.descSec}>
