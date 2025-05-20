@@ -57,7 +57,20 @@
 
 .ghContribs {
     padding: 2rem;
-    width: 100%;
     background: #f8f8f2;
+    width: 100%;
     overflow-x: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 80rem) {
+    .ghContribs {
+        width: auto;
+    }
 }
