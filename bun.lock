@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "blog",
+      "name": "gregosilaja",
       "dependencies": {
         "sst": "^3",
       },
@@ -28,7 +28,7 @@
       },
     },
     "packages/functions": {
-      "name": "@blog/functions",
+      "name": "@gregosilaja/functions",
       "version": "0.0.0",
       "dependencies": {
         "sst": "*",
@@ -57,7 +57,7 @@
 
     "@babel/types": ["@babel/types@7.27.1", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.27.1" } }, "sha512-+EzkxvLNfiUeKMgy/3luqfsCWFRXLb7U6wNQTk60tovuckwB15B191tJWvpp4HjiQWdJkCxO3Wbvc6jlk3Xb2Q=="],
 
-    "@blog/functions": ["@blog/functions@workspace:packages/functions"],
+    "@gregosilaja/functions": ["@gregosilaja/functions@workspace:packages/functions"],
 
     "@capsizecss/unpack": ["@capsizecss/unpack@2.4.0", "", { "dependencies": { "blob-to-buffer": "^1.2.8", "cross-fetch": "^3.0.4", "fontkit": "^2.0.2" } }, "sha512-GrSU71meACqcmIUxPYOJvGKF0yryjN/L1aCuE9DViCTJI7bfkjgYDPD1zbNDcINJwSSP6UaBZY9GAbYDO7re0Q=="],
 
