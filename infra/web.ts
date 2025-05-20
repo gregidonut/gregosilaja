@@ -11,5 +11,6 @@ export const frontend = new sst.aws.Astro("Frontend", {
     name: process.env.ASTRO_APP_DOMAIN,
     dns: false,
     cert: process.env.FE_ACM_CERT_ARN,
+    redirects: [process.env.ASTRO_APP_DOMAIN_REDIRECT],
   },
 });

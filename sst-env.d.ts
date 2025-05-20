@@ -5,9 +5,14 @@
 
 declare module "sst" {
   export interface Resource {
+    Frontend: {
+      type: "sst.aws.Astro";
+      url: string;
+    };
   }
 }
 /// <reference path="sst-env.d.ts" />
 
-import "sst"
-export {}
+import "sst";
+export {};
+

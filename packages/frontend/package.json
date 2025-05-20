@@ -1,23 +1,23 @@
 {
-  "name": "frontend",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@typescript-eslint/parser": "^8.32.1",
-    "astro": "^5.7.13",
-    "astro-compressor": "^1.0.0",
-    "astro-sst": "^3.1.4",
-    "eslint": "^9.27.0",
-    "eslint-plugin-astro": "^1.3.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "jiti": "^2.4.2",
-    "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1"
-  }
+    "name": "@gregosilaja/frontend",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@typescript-eslint/parser": "^8.32.1",
+        "astro": "^5.7.13",
+        "astro-compressor": "^1.0.0",
+        "astro-sst": "^3.1.4",
+        "eslint": "^9.27.0",
+        "eslint-plugin-astro": "^1.3.1",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "jiti": "^2.4.2",
+        "prettier": "^3.5.3",
+        "prettier-plugin-astro": "^0.14.1"
+    }
 }
