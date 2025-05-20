@@ -1,6 +1,6 @@
 {
-    "name": "MyWebSite",
-    "short_name": "MySite",
+    "name": "gregosilaja",
+    "short_name": "gregosilaja",
     "icons": [
         {
             "src": "/web-app-manifest-192x192.png",
@@ -15,8 +15,7 @@
             "purpose": "maskable"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#282a36ff",
+    "background_color": "#000000",
     "display": "standalone"
 }
-
