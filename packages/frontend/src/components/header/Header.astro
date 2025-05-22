@@ -1,11 +1,9 @@
 ---
 import styles from "./header.module.css";
-import navBurger from "@/assets/nav-burger.svg?url";
+import NavSection from "./navSection/NavSection.tsx";
 ---
 
 <header class={styles.header}>
-    <div class={styles.navBurger}>
-        <img src={navBurger} alt="nav-burger" />
-    </div>
+    <NavSection client:only="react" />
     <a href="/"><img src="/favicon.svg" alt="logo" /></a>
 </header>

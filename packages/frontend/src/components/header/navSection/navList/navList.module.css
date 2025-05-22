@@ -1,0 +1,12 @@
+.ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    padding: 0;
+}
+
+.ul > li {
+    padding: 1rem;
+    background: #282a36;
+}
