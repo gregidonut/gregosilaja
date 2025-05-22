@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.iframe {
+    flex: 1;
+
+    height: calc(100svh - 20rem);
+    border: none;
+    width: 100%;
+    display: block;
+}

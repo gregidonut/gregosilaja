@@ -1,0 +1,14 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/header/Header.astro";
+import Main from "@/components/main/Main.astro";
+import styles from "./_main.module.css";
+---
+
+<Layout title="CV" description="mandatory resume page">
+    <Header />
+    <Main class={styles.main}>
+        <h2><a href="https://cv.gregosilaja.cc">cv.gregosilaja.cc</a></h2>
+        <iframe class={styles.iframe} src="https:cv.gregosilaja.cc"></iframe>
+    </Main>
+</Layout>

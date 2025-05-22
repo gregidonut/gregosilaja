@@ -1,3 +1,11 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .topSection {
     display: flex;
     align-items: center;
