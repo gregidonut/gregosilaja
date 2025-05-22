@@ -8,6 +8,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+    site: "https://gregosilaja.cc",
     integrations: [compressor(), react()],
     adapter: aws({
         responseMode: "stream",
