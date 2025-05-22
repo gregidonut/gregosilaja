@@ -1,8 +1,10 @@
 ---
 import styles from "./main.module.css";
+
+const { class: customClass = "" } = Astro.props;
 ---
 
-<main class={styles.main}>
+<main class={`${styles.main} ${customClass}`}>
     <slot>
         <p>ulol</p>
     </slot>
