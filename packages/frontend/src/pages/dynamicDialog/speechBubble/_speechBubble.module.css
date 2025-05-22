@@ -10,18 +10,18 @@
 /* https://codepen.io/JoeHastings/pen/gPrPMo */
 p.bubble {
     position: absolute;
-    top: -22rem;
-    left: -29rem;
+    top: -19rem;
+    left: -20rem;
 
-    width: 30rem;
-    text-align: center;
+    width: 20rem;
+    text-align: justify;
     line-height: 1.4em;
     margin: 0.5rem auto;
     background-color: #282a36;
     border: 0.4rem solid #44475a;
     border-radius: 3rem;
     font-family: sans-serif;
-    padding: 0.5rem;
+    padding: 1rem;
     font-size: large;
 
     white-space: pre-line;
