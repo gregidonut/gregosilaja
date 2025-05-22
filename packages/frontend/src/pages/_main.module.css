@@ -34,7 +34,6 @@
     padding: 2rem;
     width: 90%;
 
-    overflow-x: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,6 +53,10 @@
     flex-direction: column;
 
     border-radius: 0.5rem;
+}
+
+.ghContribs > img {
+    width: 100%;
 }
 
 @media screen and (min-width: 80rem) {
