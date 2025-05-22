@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import styles from "./techFigures.module.css";
+import frontend from "@/assets/frontend.svg";
+import backend from "@/assets/backend.svg";
+import devops from "@/assets/devops.svg";
+const rawFigures = [
+    {
+        img: frontend,
+        cap: "Frontend Polish",
+    },
+    {
+        img: backend,
+        cap: "Backend Power",
+    },
+    {
+        img: devops,
+        cap: "DevOps Precision",
+    },
+];
+
+const polFigs = rawFigures.map(function (item) {
+    const stArr = item.img.src.split("/");
+    const rawAlt = stArr[stArr.length - 1]!.split(".");
+    return {
+        img: item.img,
+        alt: rawAlt[0],
+        cap: item.cap,
+    };
+});
+---
+
+<section class={styles.descSec}>
+    {
+        polFigs.map(function (item) {
+            return (
+                <figure>
+                    <Image
+                        class="techImg"
+                        height={140}
+                        src={item.img}
+                        alt={item.alt}
+                    />
+                    <figcaption
+                        data-desc={item.cap.split(" ").join("-").toLowerCase()}
+                    >
+                        <p>
+                            <strong>{item.cap}</strong>
+                        </p>
+                    </figcaption>
+                </figure>
+            );
+        })
+    }
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    gsap.from(".techImg", {
+        y: -1000,
+        ease: "bounce",
+        stagger: { amount: 2 },
+        delay: 2,
+    });
+    const thirdTechImg = document.querySelectorAll(".techImg")[2];
+    const secondTween = gsap.to('figcaption[data-desc="devops-precision"]', {
+        y: 30,
+        duration: 0.2,
+        repeat: 1,
+        yoyo: true,
+        paused: true,
+    });
+
+    let firstBounce = false;
+    gsap.ticker.add(function watchThirdTechImgBounce() {
+        if (!thirdTechImg) return;
+
+        const y = gsap.getProperty(thirdTechImg, "y") as number;
+        if (Math.abs(y) < 80) {
+            if (firstBounce) {
+                firstBounce = false;
+                gsap.ticker.remove(watchThirdTechImgBounce);
+                return;
+            }
+            firstBounce = true;
+            secondTween.play();
+        }
+    });
+</script>
