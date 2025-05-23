@@ -27,6 +27,12 @@ p.bubble {
     white-space: pre-line;
 }
 
+@media screen and (min-width: 400px) {
+    p.bubble {
+        font-size: 1.3rem;
+    }
+}
+
 p.bubble:before,
 p.bubble:after {
     content: " ";

@@ -41,15 +41,15 @@ div#root {
     flex-direction: column;
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 750px) {
     div#root {
-        width: 80%;
+        width: 60rem;
     }
 }
 
-@media screen and (min-width: 80rem) {
+@media screen and (min-width: 1000px) {
     div#root {
-        width: 120rem;
+        width: 80rem;
     }
 }
 

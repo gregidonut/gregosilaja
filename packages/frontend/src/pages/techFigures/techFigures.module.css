@@ -7,7 +7,14 @@
     width: 90%;
 }
 
-.descSec figure {
+@media screen and (min-width: 600px) {
+    .descSec {
+        width: 100%;
+        gap: 2rem;
+    }
+}
+
+.descSec > figure {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,8 +22,18 @@
     gap: 2rem;
 }
 
-.descSec figure figcaption {
+.descSec > figure > figcaption {
     padding: 0.5rem 1rem;
     background: #44475a;
     border-radius: 0.5rem;
+}
+
+.descSec > figure > figcaption > p {
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .descSec > figure > figcaption > p {
+        font-size: 2rem;
+    }
 }

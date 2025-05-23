@@ -1,27 +1,63 @@
 .topSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
     gap: 2rem;
 
-    width: 35rem;
+    width: 100%;
 }
 
-.topSection > article {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    height: 20rem;
-    width: 35rem;
-
-    flex: 1;
+@media screen and (min-width: 700px) {
+    .topSection {
+        grid-template-columns: 39rem auto;
+    }
 }
 
-.topSection > article > h1 {
+@media screen and (min-width: 1000px) {
+    .topSection {
+        width: 100%;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+.topSection > h1 {
     font-size: 5rem;
+}
+
+@media screen and (min-width: 400px) {
+    .topSection > h1 {
+        font-size: 6rem;
+    }
+}
+@media screen and (min-width: 700px) {
+    .topSection {
+        position: relative;
+    }
+    .topSection > h1 {
+        position: absolute;
+        bottom: -2rem;
+        right: 0;
+        width: 25rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .topSection > h1 {
+        position: auto;
+        right: 6rem;
+        width: auto;
+    }
+}
+
+.article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 3rem;
+    width: 100%;
 }
 
 .ghCharts {
@@ -53,7 +89,13 @@
     width: 100%;
 }
 
-@media screen and (min-width: 80rem) {
+@media screen and (min-width: 700px) {
+    .topSection > article {
+        width: 50rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
     .ghContribs {
         width: auto;
     }

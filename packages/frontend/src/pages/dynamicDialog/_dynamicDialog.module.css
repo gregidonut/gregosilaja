@@ -8,3 +8,9 @@
 
     width: 35rem;
 }
+
+@media screen and (min-width: 400px) {
+    .dynamicDialog {
+        width: 39rem;
+    }
+}

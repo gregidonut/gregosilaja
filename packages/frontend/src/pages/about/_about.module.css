@@ -1,8 +1,14 @@
 .article {
-    max-width: 35rem;
+    width: 35rem;
     text-indent: 4rem;
     text-align: justify;
     padding: 10rem 0;
+}
+
+@media screen and (min-width: 40px) {
+    .article {
+        width: 39rem;
+    }
 }
 
 .article > header {

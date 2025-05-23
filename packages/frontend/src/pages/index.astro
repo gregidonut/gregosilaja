@@ -46,11 +46,11 @@ const myPics: DialogSet = [
     <Main class={flexMainStyles.flexMain}>
         <section class={styles.topSection}>
             <DynamicDialog dSet={myPics} client:load />
-            <article>
-                <h1>Greg Osilaja</h1>
-                <TechFigures />
-            </article>
+            <h1>Greg Osilaja</h1>
         </section>
+        <article class={styles.article}>
+            <TechFigures />
+        </article>
         <section class={styles.ghCharts}>
             <div class={styles.ghContribs}>
                 <img
