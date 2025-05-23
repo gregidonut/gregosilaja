@@ -17,7 +17,7 @@ export default function (): React.JSX.Element {
     useGSAP(
         function () {
             tweenRef.current = gsap.from(".navSection", {
-                x: -1000,
+                x: -1500,
                 duration: 0.2,
                 paused: true,
             });
