@@ -1,15 +1,16 @@
 ---
 import styles from "./header.module.css";
-import NavSection from "./navSection/NavSection.tsx";
+import ReactNavSection from "./reactNavSection/ReactNavSection.tsx";
+import NavSection from "./navSection/NavSection.astro";
 
 const curPath = Astro.url.pathname;
 ---
 
 <header class={styles.header}>
-    <NavSection client:only="react" />
-    <a href="/"
-        ><img src="/favicon.svg" alt="logo" />{
-            curPath !== "/" && <h1>Greg Osilaja</h1>
-        }</a
-    >
+    <ReactNavSection client:only="react" />
+    <a href="/">
+        <img src="/favicon.svg" alt="logo" />
+        {curPath !== "/" && <h1>Greg Osilaja</h1>}
+    </a>
+    <NavSection />
 </header>

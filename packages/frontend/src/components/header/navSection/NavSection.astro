@@ -1,0 +1,22 @@
+---
+import navArray from "../navArray.json";
+
+import styles from "./navSection.module.css";
+---
+
+<nav class={styles.nav}>
+    <ul>
+        {
+            navArray.map(function (li, i) {
+                if (i === 0) {
+                    return;
+                }
+                return (
+                    <li>
+                        <a href={li.url}>{li.name}</a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</nav>

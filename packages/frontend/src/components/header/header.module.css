@@ -12,6 +12,20 @@
     position: relative;
 }
 
+@media screen and (min-width: 600px) {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 1rem 3rem;
+    }
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
 .header > nav > ul {
     list-style: none;
 }
@@ -27,7 +41,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
 }
 .header > a > img {
     height: 3.5rem;

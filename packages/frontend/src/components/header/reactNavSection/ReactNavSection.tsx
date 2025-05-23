@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import navBurger from "@/assets/nav-burger.svg?url";
-import styles from "./navSection.module.css";
+import styles from "./reactNavSection.module.css";
 
 import NavList from "./navList/NavList";
 
@@ -33,7 +33,7 @@ export default function (): React.JSX.Element {
         }
     }, [navBurgerClicked]);
     return (
-        <>
+        <div className={styles.navSectionContainer}>
             <div className={styles.navBurger}>
                 <button
                     id="nav-burger-btn"
@@ -49,6 +49,6 @@ export default function (): React.JSX.Element {
                     <NavList />
                 </section>
             </div>
-        </>
+        </div>
     );
 }
