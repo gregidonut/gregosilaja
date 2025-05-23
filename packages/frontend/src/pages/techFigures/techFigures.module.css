@@ -3,8 +3,8 @@
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    width: 100%;
+    gap: 0.5rem;
+    width: 90%;
 }
 
 .descSec figure {

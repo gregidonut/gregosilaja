@@ -11,7 +11,7 @@
 p.bubble {
     position: absolute;
     top: -19rem;
-    left: -20rem;
+    left: -22rem;
 
     width: 20rem;
     text-align: justify;
@@ -22,7 +22,7 @@ p.bubble {
     border-radius: 3rem;
     font-family: sans-serif;
     padding: 1rem;
-    font-size: large;
+    font-size: 1rem;
 
     white-space: pre-line;
 }
