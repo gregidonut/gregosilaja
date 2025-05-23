@@ -1,25 +1,24 @@
 .article {
-    width: 35rem;
+    width: 100%;
     text-indent: 4rem;
     text-align: justify;
-    padding: 10rem 0;
+    padding: 10rem 2rem;
 }
 
-@media screen and (min-width: 40px) {
+@media screen and (min-width: 600px) {
     .article {
-        width: 39rem;
+        width: 40rem;
     }
 }
-
 .article > header {
     margin-bottom: 4rem;
+}
+
+.article > header > p {
+    font-size: 0.8rem;
 }
 
 .img {
     float: left;
     margin: 1rem;
-}
-
-pre.pre {
-    background: pink;
 }
