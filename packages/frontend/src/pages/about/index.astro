@@ -2,10 +2,182 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/Header.astro";
 import Main from "@/components/main/Main.astro";
-import About from "./_about.md";
+
+import { Image } from "astro:assets";
+
+import aboutMeImg from "@/assets/about_me.jpg";
+
+import styles from "./_about.module.css";
+import flexMainStyles from "@/components/main/flexMain.module.css";
 ---
 
 <Layout title="About" description="A little something about myself">
     <Header />
-    <Main><About /></Main>
+    <Main class={flexMainStyles.flexMain}>
+        <article class={styles.article}>
+            <header>
+                <h2>About me</h2>
+                <p>
+                    Last updated - <time datetime="1747976345648"
+                        >{new Date(1747976345648).toString()}</time
+                    >
+                </p>
+            </header>
+            <main>
+                <Image
+                    src={aboutMeImg}
+                    alt="one_by_gregosilaja"
+                    width={150}
+                    class={styles.img}
+                />
+                <p>
+                    How's it going, I'm Greg, self-taught
+                    <strong>Web Development Generalist</strong>
+                    with experience in technical communication. I like cycling around
+                    <a href="https://en.wikipedia.org/wiki/Manila"
+                        >Manila City</a
+                    >, Computer Science and fantasy MMORPGs. I find learning
+                    about new tech extremely fulfilling, I can't help but brag
+                    to my friends and colleauges about my toy projects.
+                </p>
+                <p>
+                    Life hits hard, and coding was my light. It kept me
+                    grounded, creative and oriented. The little dopamine hits I
+                    get when I'm able to solve tiny problems is so pleasing, I'm
+                    nothing if not in-love with the process of slowly building
+                    systems.
+                </p>
+                <br />
+                <section>
+                    <h3>What's next for me</h3>
+                    <p>
+                        Before I found my way into web development, I spent
+                        longer than I’d like feeling stuck and uncertain about
+                        my direction. That time ultimately helped clarify what I
+                        truly wanted to pursue. But let's be honest, this
+                        post-pandemic scene isn't really as friendly to
+                        new-comers at the moment.
+                    </p>
+                    <p>
+                        Of course, I definitely will not be stopping, it's
+                        different when you actually found something you realize
+                        you can probably do until you retire. I'm no stranger to
+                        comments like <em
+                            >"when are you gonna stop with that website stuff"</em
+                        > or <em
+                            >"when are you planning on stopping to focus on
+                            stuff that matters?"</em
+                        >
+                        <strong>This is what matters!</strong> So While I recognize
+                        the importance of finding a job, its less important than
+                        just being able to write code and solve problems, which I
+                        can do independently and without external incentives.
+                    </p>
+                    <p>
+                        I'm glad I found programming and web development, and I
+                        will keep going no matter what it takes.
+                    </p>
+                </section>
+                <br />
+                <section>
+                    <h3>My go-to Tech Stack</h3>
+                    <figure>
+                        <pre>
+"If you haven't found it yet, 
+keep looking. Don't settle."
+
+- Steve Jobs</pre>
+                        <figcaption>
+                            <a
+                                href="https://www.forbes.com/sites/timworstall/2011/10/08/steve-jobs-and-the-dont-settle-speech/"
+                                >Steve Jobs and the Don't Settle Speech</a
+                            >
+                        </figcaption>
+                    </figure>
+                    <br />
+                    <p>
+                        I'm not really a big fan of Steve Jobs, but this quote
+                        resonated with me. It took me a bit of time to start
+                        showcasing my projects because I hadn’t yet found a web
+                        framework that felt like the right fit, until recently.
+                    </p>
+                    <p>
+                        I might write a full blog about in-depth technical
+                        details, but the main Gist of it is;
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="https://astro.build/"
+                                ><strong>Astro</strong></a
+                            > for the frontend
+                            <p>
+                                I honestly didn't think a good <a
+                                    href="https://jamstack.org/generators/"
+                                    >Static Site Generators</a
+                                > were as hard to come by as it had for me. But this
+                                one just feels right.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="https://go.dev/">Go</a> for back-end API implementation
+                            <p>
+                                The concurrency is one thing, but its most
+                                notable feature In my opinion, is the <a
+                                    href="https://gobyexample.com/structs"
+                                    >Struct</a
+                                >. It's so simple and elegant, it just makes
+                                sense.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="https://www.postgresql.org/">PostgreSQL</a>
+                            for my database
+                            <p>
+                                This is the most expensive part of my stack. But
+                                having tried a couple by now including no-SQL
+                                alternatives, this one just has that SQL
+                                ergonomics and clarity that make complex queries
+                                feel straightforward.
+                            </p>
+                        </li>
+                        <li>
+                            <a href="https://sst.dev/">SST</a> for my devops needs
+                            <p>
+                                <a href="https://aws.amazon.com/">AWS</a> has really
+                                changed the way we think about IT infrastructure.
+                                But SST just solves its biggest problem, complexity.
+                                With it's well documented API, its really simple
+                                to just provision resources for a high quality <a
+                                    href="https://jamstack.org/">Jamstack</a
+                                > app.
+                            </p>
+                        </li>
+                    </ul>
+                    <figure>
+                        <pre>
+"If I have seen further than others, 
+it is by standing upon the shoulders 
+of giants."
+
+- Isaac Newton</pre>
+                        <figcaption>
+                            <a
+                                href="https://www.socratic-method.com/quote-meanings/isaac-newton-if-i-have-seen-further-than-others-it-is-by-standing-upon-the-shoulders-of-giants"
+                                >Isaac Newton: 'If I have seen further than
+                                others, it is by standing upon the shoulders of
+                                giants.'</a
+                            >
+                        </figcaption>
+                        <p>
+                            I truely stand upon the shoulders of giants. Without
+                            these tools, I don't know how enjoyable my developer
+                            experience would be. I acknowledge that that my
+                            views might shift as I grow, but at this stage, this
+                            solution is satisifying and really works for me.
+                        </p>
+                    </figure>
+                </section>
+            </main>
+        </article>
+    </Main>
 </Layout>

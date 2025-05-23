@@ -1,0 +1,19 @@
+.article {
+    max-width: 35rem;
+    text-indent: 4rem;
+    text-align: justify;
+    padding: 10rem 0;
+}
+
+.article > header {
+    margin-bottom: 4rem;
+}
+
+.img {
+    float: left;
+    margin: 1rem;
+}
+
+pre.pre {
+    background: pink;
+}

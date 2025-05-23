@@ -13,6 +13,7 @@ import ghPicStartled from "@/assets/my_pic_startled.png";
 import ghPicThinking from "@/assets/my_pic_thinking.png";
 
 import styles from "./_main.module.css";
+import flexMainStyles from "@/components/main/flexMain.module.css";
 
 const myPics: DialogSet = [
     {
@@ -42,7 +43,7 @@ const myPics: DialogSet = [
     description="A personal blog and portfolio showcasing my projects, technical insights, and journey in software development."
 >
     <Header />
-    <Main class={styles.main}>
+    <Main class={flexMainStyles.flexMain}>
         <section class={styles.topSection}>
             <DynamicDialog dSet={myPics} client:load />
             <article>

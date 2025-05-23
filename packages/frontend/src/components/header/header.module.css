@@ -22,7 +22,13 @@
     justify-content: center;
     flex-direction: row;
 }
-
+.header > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+}
 .header > a > img {
     height: 3.5rem;
 }
