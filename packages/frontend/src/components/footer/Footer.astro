@@ -2,10 +2,15 @@
 import { Image } from "astro:assets";
 import footerFigures from "./footerFigures.json";
 import styles from "./footer.module.css";
+
+const {
+    footerContainerClass: customfooterContainerClass = "",
+    footerClass: customFooterClass = "",
+} = Astro.props;
 ---
 
-<div class={styles.footerContainer}>
-    <footer class={styles.footer}>
+<div class={`${styles.footerContainer} ${customfooterContainerClass}`}>
+    <footer class={`${styles.footer} ${customFooterClass}`}>
         <article class={styles.iconArt}>
             <h2>socials</h2>
             <main>

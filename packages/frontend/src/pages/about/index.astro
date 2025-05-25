@@ -9,12 +9,11 @@ import { Image } from "astro:assets";
 import aboutMeImg from "@/assets/about_me.jpg";
 
 import styles from "./_about.module.css";
-import flexMainStyles from "@/components/main/flexMain.module.css";
 ---
 
 <Layout title="About" description="A little something about myself">
     <Header />
-    <Main class={flexMainStyles.flexMain}>
+    <Main class={styles.main}>
         <article class={styles.article}>
             <header>
                 <h2>About me</h2>
@@ -180,6 +179,9 @@ of giants."
                 </section>
             </main>
         </article>
+        <Footer
+            footerContainerClass={styles.footerContainer}
+            footerClass={styles.footer}
+        />
     </Main>
-    <Footer />
 </Layout>
