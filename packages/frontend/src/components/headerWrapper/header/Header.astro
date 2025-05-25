@@ -4,10 +4,12 @@ import ReactNavSection from "./reactNavSection/ReactNavSection.tsx";
 import NavSection from "./navSection/NavSection.astro";
 
 const curPath = Astro.url.pathname;
+
+const footerHtml = await Astro.slots.render("default");
 ---
 
 <header class={styles.header}>
-    <ReactNavSection client:only="react" />
+    <ReactNavSection footerHTML={footerHtml} client:only="react" />
     <a href="/">
         <img src="/favicon.svg" alt="logo" />
         {curPath !== "/" && <h1>Greg Osilaja</h1>}

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { FooterHTMLContext } from "./context";
 
 import navBurger from "@/assets/nav-burger.svg?url";
 import styles from "./reactNavSection.module.css";
@@ -9,7 +10,10 @@ import NavList from "./navList/NavList";
 
 gsap.registerPlugin(useGSAP);
 
-export default function (): React.JSX.Element {
+export interface FooterHTML {
+    footerHTML: string;
+}
+export default function ({ footerHTML }: FooterHTML): React.JSX.Element {
     const [navBurgerClicked, setNavBurgerClicked] = useState<boolean>(false);
     const container = useRef(null);
     const tweenRef = useRef<gsap.core.Tween | null>(null);
@@ -32,6 +36,7 @@ export default function (): React.JSX.Element {
                 : tweenRef.current.reverse();
         }
     }, [navBurgerClicked]);
+
     return (
         <div className={styles.navSectionContainer}>
             <div className={styles.navBurger}>
@@ -46,7 +51,9 @@ export default function (): React.JSX.Element {
             </div>
             <div ref={container}>
                 <section className={`${styles.section} navSection`}>
-                    <NavList />
+                    <FooterHTMLContext.Provider value={footerHTML}>
+                        <NavList />
+                    </FooterHTMLContext.Provider>
                 </section>
             </div>
         </div>
