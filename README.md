@@ -11,9 +11,9 @@ Currently hosted at [https://gregosilaja.cc][1]
 
 - [x] add dynamic quotes(i'm sure there's some api that does this free, LLMs are a waste of electricity)
 - [x] animations for the tech logos
+- [x] a nav section when clicking on the hamburger icon responsive when screensize is larger, in which case a `nav bar + footer` replaces it
+- [x] overall just responsive design for larger screens
 - [ ] add an endpoint that contains markdown content for the blog.
-- [ ] a nav section when clicking on the hamburger icon responsive when screensize is larger, in which case a `nav bar + footer` replaces it
-- [ ] overall just responsive design for larger screens
 - [ ] probably needs better component management
 
 [1]: https://gregosilaja.cc
