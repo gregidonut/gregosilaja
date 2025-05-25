@@ -1,6 +1,7 @@
 import React from "react";
 import navArray from "../../navArray.json";
 import styles from "./navList.module.css";
+import Footer from "./footer/Footer";
 
 export default function NavList(): React.JSX.Element {
     return (
@@ -12,6 +13,9 @@ export default function NavList(): React.JSX.Element {
                     </li>
                 );
             })}
+            <li>
+                <Footer />
+            </li>
         </ul>
     );
 }

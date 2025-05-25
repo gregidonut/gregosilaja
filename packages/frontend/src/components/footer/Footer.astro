@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import footerFigures from "./footerFigures.json";
+import styles from "./footer.module.css";
+---
+
+<div class={styles.footerContainer}>
+    <footer class={styles.footer}>
+        <article class={styles.iconArt}>
+            <h2>socials</h2>
+            <main>
+                {
+                    footerFigures.map(function (item) {
+                        return (
+                            <figure>
+                                <a href={item.url}>
+                                    <Image
+                                        src={item.img}
+                                        alt={item.alt}
+                                        height={30}
+                                    />
+                                </a>
+                                <figcaption>
+                                    <p>
+                                        <a href={item.url}>{item.cap}</a>
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        );
+                    })
+                }
+            </main>
+        </article>
+        <article>
+            <h2>contact</h2>
+            <p>
+                <a href="mailto:gregosilaja@outlook.com">
+                    gregosilaja@outlook.com
+                </a>
+            </p>
+            <p class={styles.copyright}>
+                &copy; 2025 gregosilaja.cc. All rights reserved.
+            </p>
+        </article>
+    </footer>
+</div>

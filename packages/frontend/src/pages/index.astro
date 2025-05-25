@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/header/Header.astro";
 import Main from "@/components/main/Main.astro";
+import Footer from "@/components/footer/Footer.astro";
 
 import type { DialogSet } from "@/utils";
 import DynamicDialog from "./dynamicDialog/_DynamicDialogWrapper.tsx";
@@ -68,4 +69,5 @@ const myPics: DialogSet = [
             />
         </section>
     </Main>
+    <Footer />
 </Layout>
