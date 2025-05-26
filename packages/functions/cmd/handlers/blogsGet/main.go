@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"regexp"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -34,13 +35,15 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 			continue
 		}
 
-		content, err := bucket.GetObjectContents(*obj.Key)
+		key := *obj.Key
+		content, err := bucket.GetObjectContents(key)
 		if err != nil {
 			return utils.APIServerError(err)
 		}
 
 		blogs = append(blogs, models.Blog{
-			ID:           *obj.Key,
+			ID:           regexp.MustCompile(`[/.]`).Split(key, -1)[1],
+			Path:         key,
 			Body:         content,
 			LastModified: *obj.LastModified,
 		})
