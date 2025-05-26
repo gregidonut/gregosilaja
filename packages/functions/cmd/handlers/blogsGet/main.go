@@ -23,7 +23,7 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 		return utils.APIServerError(err)
 	}
 
-	objectList, err := bucket.ListObjects()
+	objectList, err := bucket.ListObjects("blogs/")
 	if err != nil {
 		return utils.APIServerError(err)
 	}
