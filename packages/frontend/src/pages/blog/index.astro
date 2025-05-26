@@ -1,10 +1,28 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/headerWrapper/HeaderWrapper.astro";
 import Main from "@/components/main/Main.astro";
+import Footer from "@/components/footer/Footer.astro";
+
+const blogData = await getCollection("blog");
 ---
 
 <Layout title="Blog" description="My thoughts on my dev journey">
     <Header />
-    <Main><h2>Blog</h2></Main>
+    <Main>
+        <h2>Blog</h2>
+        <ul>
+            {
+                blogData.map(function (b) {
+                    return (
+                        <li>
+                            <a href={`/blog/${b.id}`}>{b.id}</a>
+                        </li>
+                    );
+                })
+            }
+        </ul>
+    </Main>
+    <Footer />
 </Layout>
