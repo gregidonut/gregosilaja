@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/headerWrapper/HeaderWrapper.astro";
+import Main from "@/components/main/Main.astro";
+import Footer from "@/components/footer/Footer.astro";
+import { Blog } from "@/utils/models";
+
+export async function getStaticPaths() {
+    const blogData = await getCollection("blog");
+    return blogData.map(function (bd) {
+        return {
+            params: { postId: bd.id },
+            props: bd.data as Blog,
+        };
+    });
+}
+const { body } = Astro.props as Blog;
+---
+
+<Layout title="Blog" description="My thoughts on my dev journey">
+    <Header />
+    <Main><p>{body}</p></Main>
+    <Footer />
+</Layout>
