@@ -10,9 +10,12 @@ export default $config({
     };
   },
   async run() {
+    const storage = await import("./infra/storage");
+    await import("./infra/api");
     await import("./infra/web");
+
     return {
-      pogi: "ulol",
+      BlogBucket: storage.bucket.name,
     };
   },
 });

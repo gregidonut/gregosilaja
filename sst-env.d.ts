@@ -5,6 +5,14 @@
 
 declare module "sst" {
   export interface Resource {
+    "Blog": {
+      "name": string
+      "type": "sst.aws.Bucket"
+    }
+    "BlogApi": {
+      "type": "sst.aws.ApiGatewayV2"
+      "url": string
+    }
     "Frontend": {
       "type": "sst.aws.Astro"
       "url": string
