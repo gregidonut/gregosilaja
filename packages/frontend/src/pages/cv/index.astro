@@ -10,7 +10,16 @@ import styles from "./_main.module.css";
     <Header />
     <Main class={styles.main}>
         <h2><a href="https://cv.gregosilaja.cc">cv.gregosilaja.cc</a></h2>
-        <iframe class={styles.iframe} src="https://cv.gregosilaja.cc/"></iframe>
+        <section class={styles.section}>
+            <iframe
+                id="cv-site"
+                class={styles.iframe}
+                src="https://cv.gregosilaja.cc/"></iframe>
+            <div class={styles.overlay} id="iframe-overlay"></div>
+            <a href="https://cv.gregosilaja.cc/"
+                ><span class={styles.overlay}></span></a
+            >
+        </section>
     </Main>
     <Footer />
 </Layout>

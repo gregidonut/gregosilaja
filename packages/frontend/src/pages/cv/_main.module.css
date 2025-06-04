@@ -5,10 +5,30 @@
     flex-direction: column;
 }
 
+.section {
+    flex: 1;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+}
+
 .iframe {
     flex: 1;
 
     border: none;
     width: calc(100% + 2rem);
     display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
