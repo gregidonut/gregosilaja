@@ -8,6 +8,8 @@ import type { DialogSet } from "@/utils";
 import DynamicDialog from "./dynamicDialog/_DynamicDialogWrapper.tsx";
 import TechFigures from "./techFigures/_TechFigures.astro";
 
+import SiteTitle from "@/components/siteTitle/SiteTitle.astro";
+
 import ghPic from "@/assets/my_pic.png";
 import ghPicSleezy from "@/assets/my_pic_sleezy.png";
 import ghPicStartled from "@/assets/my_pic_startled.png";
@@ -47,7 +49,7 @@ const myPics: DialogSet = [
     <Main class={flexMainStyles.flexMain}>
         <section class={styles.topSection}>
             <DynamicDialog dSet={myPics} client:load />
-            <h1>Greg Osilaja</h1>
+            <SiteTitle />
         </section>
         <article class={styles.article}>
             <TechFigures />

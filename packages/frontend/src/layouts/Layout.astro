@@ -2,6 +2,7 @@
 import "./globals.css";
 
 const { title = "Home", description = "home page" } = Astro.props;
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -26,6 +27,7 @@ const { title = "Home", description = "home page" } = Astro.props;
         <link rel="manifest" href="/site.webmanifest" />
         <title>Greg Osilaja - {title}</title>
         <meta name="description" content={description} />
+        <ClientRouter />
     </head>
     <body>
         <div id="root">

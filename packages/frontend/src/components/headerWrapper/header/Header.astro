@@ -2,6 +2,7 @@
 import styles from "./header.module.css";
 import ReactNavSection from "./reactNavSection/ReactNavSection.tsx";
 import NavSection from "./navSection/NavSection.astro";
+import SiteTitle from "@/components/siteTitle/SiteTitle.astro";
 
 const curPath = Astro.url.pathname;
 
@@ -12,7 +13,13 @@ const footerHtml = await Astro.slots.render("default");
     <ReactNavSection footerHTML={footerHtml} client:only="react" />
     <a href="/">
         <img src="/favicon.svg" alt="logo" />
-        {curPath !== "/" && <h1>Greg Osilaja</h1>}
+        {
+            curPath !== "/" && (
+                <>
+                    <SiteTitle />
+                </>
+            )
+        }
     </a>
     <NavSection />
 </header>
