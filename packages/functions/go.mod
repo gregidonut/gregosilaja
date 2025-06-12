@@ -28,6 +28,5 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.23.4 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sts v1.28.6 // indirect
 	github.com/aws/smithy-go v1.22.2 // indirect
-	github.com/tkrajina/go-reflector v0.5.5 // indirect
-	github.com/tkrajina/typescriptify-golang-structs v0.2.0 // indirect
+	github.com/yuin/goldmark v1.7.12 // indirect
 )

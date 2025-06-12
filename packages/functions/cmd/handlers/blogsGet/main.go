@@ -1,16 +1,17 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
-	"regexp"
-
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/gregidonut/gregosilaja/packages/functions/cmd/models"
 	"github.com/gregidonut/gregosilaja/packages/functions/cmd/s3helpers"
 	"github.com/gregidonut/gregosilaja/packages/functions/cmd/utils"
 	"github.com/sst/sst/v3/sdk/golang/resource"
+	"github.com/yuin/goldmark"
+	"regexp"
 )
 
 func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -36,15 +37,20 @@ func handler(ctx context.Context, event events.APIGatewayProxyRequest) (events.A
 		}
 
 		key := *obj.Key
+
 		content, err := bucket.GetObjectContents(key)
 		if err != nil {
+			return utils.APIServerError(err)
+		}
+		var buf bytes.Buffer
+		if err := goldmark.Convert([]byte(content), &buf); err != nil {
 			return utils.APIServerError(err)
 		}
 
 		blogs = append(blogs, models.Blog{
 			ID:           regexp.MustCompile(`[/.]`).Split(key, -1)[1],
 			Path:         key,
-			Body:         content,
+			Body:         buf.String(),
 			LastModified: *obj.LastModified,
 		})
 	}

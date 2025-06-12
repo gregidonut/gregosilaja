@@ -7,7 +7,7 @@ import (
 	"github.com/gregidonut/gregosilaja/packages/functions/cmd/utils"
 )
 
-// BucketBasics encapsulates the Amazon Simple Storage Service (Amazon S3) actions
+// Bucket encapsulates the Amazon Simple Storage Service (Amazon S3) actions
 // used in the examples.
 // It contains S3Client, an Amazon S3 service client that is used to perform bucket
 // and object actions.

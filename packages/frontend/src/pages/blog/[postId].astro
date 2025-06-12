@@ -20,6 +20,6 @@ const { body } = Astro.props as Blog;
 
 <Layout title="Blog" description="My thoughts on my dev journey">
     <Header />
-    <Main><p>{body}</p></Main>
+    <Main><article><Fragment set:html={body} /></article></Main>
     <Footer />
 </Layout>
