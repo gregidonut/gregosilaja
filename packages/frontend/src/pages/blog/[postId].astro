@@ -1,10 +1,11 @@
 ---
+import * as cheerio from "cheerio";
 import { getCollection } from "astro:content";
+import { Blog } from "@/utils/models";
+
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/headerWrapper/HeaderWrapper.astro";
 import Main from "@/components/main/Main.astro";
-import Footer from "@/components/footer/Footer.astro";
-import { Blog } from "@/utils/models";
 
 export async function getStaticPaths() {
     const blogData = await getCollection("blog");
@@ -15,11 +16,26 @@ export async function getStaticPaths() {
         };
     });
 }
-const { body } = Astro.props as Blog;
+const { body, assets } = Astro.props as Blog;
+const $ = cheerio.load(body);
+
+$("img").each((_, element) => {
+    const $img = $(element);
+    const src = $img.attr("src");
+    if (src && Object.keys(assets).includes(src)) {
+        $img.attr(
+            "src",
+            `data:image/${assets[src]!.ext};base64,${assets[src]!.b64String}`,
+        );
+        $img.attr("width", "100%");
+    }
+    $img.attr("loading", "lazy");
+});
 ---
 
 <Layout title="Blog" description="My thoughts on my dev journey">
     <Header />
-    <Main><article><Fragment set:html={body} /></article></Main>
-    <Footer />
+    <Main>
+        <article><Fragment set:html={$.html()} /></article>
+    </Main>
 </Layout>

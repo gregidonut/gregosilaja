@@ -11,7 +11,7 @@ import (
 )
 
 // GetObjectContents gets an object from a bucket and returns a string of it's contents.
-func (b Bucket) GetObjectContents(objectKey string) (string, error) {
+func (b Bucket) GetObjectContents(objectKey string) ([]byte, error) {
 	result, err := b.S3Client.GetObject(b.Ctx, &s3.GetObjectInput{
 		Bucket: aws.String(b.Name),
 		Key:    aws.String(objectKey),
@@ -24,12 +24,12 @@ func (b Bucket) GetObjectContents(objectKey string) (string, error) {
 		} else {
 			log.Printf("Couldn't get object %v:%v. Here's why: %v\n", b.Name, objectKey, err)
 		}
-		return "", err
+		return nil, err
 	}
 	defer result.Body.Close()
 	body, err := io.ReadAll(result.Body)
 	if err != nil {
 		log.Printf("Couldn't read object body from %v. Here's why: %v\n", objectKey, err)
 	}
-	return string(body), err
+	return body, err
 }
